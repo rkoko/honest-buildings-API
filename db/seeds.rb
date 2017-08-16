@@ -7,7 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'nokogiri'
 require 'open-uri'
-require 'byebug'
 
 def url_scraper
   array = []
