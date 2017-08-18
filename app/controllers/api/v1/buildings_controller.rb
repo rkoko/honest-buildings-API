@@ -7,7 +7,7 @@ class Api::V1::BuildingsController < ApplicationController
   end
 
   def addresses
-    building_addresses = Building.all.pluck(:id, :street_address).map{|id, street_address|{id: id, street_address: street_address}}
+    building_addresses = Building.all.pluck(:id, :street_address, :neighborhood).map{|id, street_address, neighborhood|{id: id, street_address: street_address, neighborhood: neighborhood}}
     render json: building_addresses
   end
 
