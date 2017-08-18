@@ -5,6 +5,7 @@ class CreateReviews < ActiveRecord::Migration[5.1]
       t.integer :upkeep_rating
       t.integer :speedy_rating
       t.integer :quality_rating
+      t.float :avg_rating
       t.string :body
       t.string :comment
       t.belongs_to :user, foreign_key: true

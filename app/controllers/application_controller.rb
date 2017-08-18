@@ -34,7 +34,7 @@ class ApplicationController < ActionController::API
   end
 
   def secret
-    'honestbuildings'
+    ENV['SECRET']
   end
 
   def algorithm

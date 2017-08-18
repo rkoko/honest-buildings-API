@@ -1,5 +1,6 @@
 #define constant here that calls Building.all
 class Api::V1::BuildingsController < ApplicationController
+  # before_action :authorize_user!, only: [:show]
 
   def index
     # render json: {buildings: Building.all}

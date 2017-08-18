@@ -12,6 +12,7 @@ before_action :authorize_user!
   def create
     review = Review.new(review_params)
     review.user_id = current_user.id
+    review.avg_rating = review.calculate_avg_rating
     review.save
     render json: review
   end

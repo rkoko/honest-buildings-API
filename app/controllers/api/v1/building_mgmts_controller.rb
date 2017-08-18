@@ -1,4 +1,6 @@
 class Api::V1::BuildingMgmtsController < ApplicationController
+  # before_action :authorize_user!, only: [:show]
+
   def index
     render json: { building_mgmts: BuildingMgmt.all }
   end
