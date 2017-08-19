@@ -45,18 +45,36 @@ def building_scraper
 end
 
 def create_data
-    doc = Nokogiri::HTML(open('https://www.nybits.com/apartments/3692_bedford_ave_bk.html'))
+  # building_scraper.each do |url|
+    doc = Nokogiri::HTML(open('https://www.nybits.com/apartments/33-25_81st_st_qn.html'))
     building_name = doc.css('div#dancefloor h1').children.text
     table = doc.css('div#dancefloor table#summarytable tr')
       rows_array = table.map {|row| row.children.text}
-      rows_array[0]
-      hood = rows_array[1].split(",")[0]
-      hood.split(":")[1].slice!(0..1)
-      boro = rows_array[1].split(",")[1].slice!(0)
+    #row 1
+        address = rows_array[0].split(":")[1].split("(map)")
+        address[0].slice!(0..1)
+      street_address = address[0]
+        zip_code=address[1].split[2]
 
-    end
-    byebug
-end
+
+    #row 2
+        hood_parse = rows_array[1].split(", ")[0].split(":")[1]
+        hood_parse.slice!(0..1)
+        neighborhood = hood_parse
+        boro = rows_array[1].split(", ")[1]
+
+    #row 3
+          leasing = rows_array[2].split(":")[1]
+          leasing.slice!(0..1)
+          mgmt_name = leasing
+          byebug
+        # mgmtInstance = BuildingMgmt.find_or_create_by(name: mgmt_name)
+        #
+        # building = Building.create(street_address: street_address, neighborhood: neighborhood, zip_code: zip_code, boro: boro building_mgmt: mgmtInstance)
+    # end
+  end
+
+
 
 create_data
 
