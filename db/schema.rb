@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20170809193409) do
     t.integer "upkeep_rating"
     t.integer "speedy_rating"
     t.integer "quality_rating"
+    t.float "avg_rating"
     t.string "body"
     t.string "comment"
     t.bigint "user_id"
