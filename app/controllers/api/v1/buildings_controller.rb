@@ -14,7 +14,7 @@ class Api::V1::BuildingsController < ApplicationController
 
   def show
       building = Building.find(params[:id])
-      reviews = building.reviews
+      reviews = building.reviews.order('created_at DESC')
       building_mgmt = building.building_mgmt
       rating = building_mgmt.calculate_avg_rating.round(2)
       render json: {building: building, reviews: reviews, building_mgmt: building_mgmt, rating: rating}

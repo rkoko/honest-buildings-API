@@ -2,7 +2,7 @@ class Api::V1::ReviewsController < ApplicationController
 # before_action :authorize_user!
 
   def index
-    render json: Review.all
+    render json: Review.all.order('created_at DESC')
   end
 
   def show
