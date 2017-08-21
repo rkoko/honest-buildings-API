@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20170809193409) do
 
   create_table "building_mgmts", force: :cascade do |t|
     t.string "name"
+    t.string "details"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

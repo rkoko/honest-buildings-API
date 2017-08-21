@@ -23,7 +23,8 @@ def building_scraper
       mgmt = doc.css('div#dancefloor h1')
       mgmt_name = mgmt.children.text
       if mgmt_name != "Brodsky Organization" &&  mgmt_name !='IBEC Living' && mgmt_name != 'Landmark Resources LLC' && mgmt_name != 'M & R Management' && mgmt_name != 'Rose Associates, Inc' && mgmt_name != 'RY Management Co., Inc'
-      mgmtInstance = BuildingMgmt.find_or_create_by(name: mgmt_name)
+      mgmtDetails = doc.css('table#summarytable').children.text
+      mgmtInstance = BuildingMgmt.find_or_create_by(name: mgmt_name, details: mgmtDetails)
       doc.css('ul.spacyul li').each do |building|
         details = building.content
         parsed_info = details.split(")")[0].split("\n")

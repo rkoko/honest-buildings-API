@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       post '/buildings/new', to: 'reviews#create'
       get '/reviews', to: 'reviews#index'
       get '/buildings/addresses', to: 'buildings#addresses'
+      get '/reviews/:id', to: 'reviews#show'
       # resources :reviews
       resources :buildings
       resources :building_mgmts
