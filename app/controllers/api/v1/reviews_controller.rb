@@ -14,7 +14,7 @@ class Api::V1::ReviewsController < ApplicationController
 
   def create
     review = Review.new(review_params)
-    review.user_id = current_user.id
+    review.user = current_user
     review.avg_rating = review.calculate_avg_rating
     review.save
     render json: review

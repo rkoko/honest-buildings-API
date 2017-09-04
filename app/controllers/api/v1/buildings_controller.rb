@@ -1,9 +1,7 @@
-#define constant here that calls Building.all
 class Api::V1::BuildingsController < ApplicationController
   # before_action :authorize_user!, only: [:show]
 
   def index
-    # render json: {buildings: Building.all}
     render json: Building.all
   end
 
@@ -13,11 +11,6 @@ class Api::V1::BuildingsController < ApplicationController
   end
 
   def show
-      # building = Building.find(params[:id])
-      # reviews = building.reviews.order('created_at DESC')
-      # building_mgmt = building.building_mgmt
-      # rating = building_mgmt.calculate_avg_rating.round(2)
-      # render json: {building: building, reviews: reviews, building_mgmt: building_mgmt,  rating: rating}
       render json: Building.find(params[:id]), include: ['reviews', 'building_mgmt']
   end
 end

@@ -4,7 +4,9 @@ class Review < ApplicationRecord
   belongs_to :building
 
   def calculate_avg_rating
-    review_avg = (self.comms_rating + self.quality_rating + self.speedy_rating + self.upkeep_rating)/4.0
+    num_of_categories = 4.0
+    
+    review_avg = (self.comms_rating + self.quality_rating + self.speedy_rating + self.upkeep_rating)/num_of_categories
   end
 
 end
