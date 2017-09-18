@@ -12,15 +12,11 @@ As a user, I can (upon signing up/logging in):
 * View a building management's profile, which includes contact info on the management company, application fee, list of all buildings under its management (along with a map view of its buildings), and its cumulative average rating.
 
 ## How to use
-Please visit [the deployed site](https://honest-buildings.herokuapp.com/) and sign up! 
+Please visit [the deployed site](https://honest-buildings.herokuapp.com/) and sign up!
 
 ## Technologies/Libraries Used
-**Client**
-  * ReactJS
-  * Semantic UI React
-  * [Google Maps API ](https://www.npmjs.com/package/google-map-react)
-  * [Google Maps Geocode API ](https://developers.google.com/maps/documentation/geocoding/intro)
-  * ChartJS
+[**Client**](https://github.com/rkoko/honest-buildings-Frontend)
+
 
 **Server**
   * Ruby on Rails
@@ -30,12 +26,3 @@ Please visit [the deployed site](https://honest-buildings.herokuapp.com/) and si
 
 ## Entity Relationship Diagram
 ![Image of ERD Diagram](https://github.com/rkoko/honest-buildings-Frontend/blob/master/public/erd.png)
-
-
-## Wireframes
-
- ![Wireframe1](https://github.com/rkoko/honest-buildings-Frontend/blob/master/public/wireframe1.png)
-
- ![Wireframe2](https://github.com/rkoko/honest-buildings-Frontend/blob/master/public/wireframe2.png)
-
- ![Wireframe3](https://github.com/rkoko/honest-buildings-Frontend/blob/master/public/wireframe3.png)
