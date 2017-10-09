@@ -7,7 +7,6 @@ class Api::V1::BuildingMgmtsController < ApplicationController
 
   def create
     mgmt = BuildingMgmt.new(mgmt_params)
-    mgmt.save
     if mgmt.save
       render json: { name: mgmt.name, status: 200 }
     else
